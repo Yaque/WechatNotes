@@ -13,7 +13,7 @@
 
     + 在命令行中安装git后执行如下操作。
 
-        git clone https://github.com/Yaque/WechatNotes.git
+            git clone https://github.com/Yaque/WechatNotes.git
 
     + 直接[点击](https://github.com/Yaque/WechatNotes/archive/master.zip)此处下载
     
