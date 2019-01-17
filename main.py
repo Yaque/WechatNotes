@@ -58,7 +58,5 @@ while(True):
 
     print("time coming", result)
     friend_test = itchat.search_friends(remarkName="YaqueOK")
-    friend = itchat.search_friends(remarkName="小公主")
     itchat.send(result, toUserName=friend_test[0]['UserName'])
-    itchat.send(result, toUserName=friend[0]['UserName'])
 
