@@ -7,9 +7,22 @@ time_scheme = []
 
 
 def read_time_file():
-    with open("time.txt", 'r', encoding="UTF-8") as time_s:
+    with open("test.txt", 'r', encoding="UTF-8") as time_s:
         for line in time_s:
             time_scheme.append(line)
+
+
+def check_with_sleep(sleep_time):
+    remainder = sleep_time % (3600 * 5)
+    count = sleep_time / (3600 * 5)
+    print(count)
+    i = 0
+    for i in range(int(count)):
+        time.sleep(3600 * 5)
+        friend_test = itchat.search_friends(remarkName="YaqueOK")
+        itchat.send("加油，加油！", toUserName=friend_test[0]['UserName'])
+
+    time.sleep(remainder)
 
 
 read_time_file()
@@ -48,7 +61,7 @@ while(True):
 
     print(min_time)
     now_time = time.time()
-    time.sleep(min_time)
+    check_with_sleep(min_time)
 
     result = ""
     if end_time == "00:00:00":
@@ -56,9 +69,8 @@ while(True):
     else:
         result = "你好，你今天" + start_time + "有直播网课还有30分钟将开始直播,持续播放到" + end_time
 
-    print("time coming", result)
+    # print("time coming", result)
     friend_test = itchat.search_friends(remarkName="YaqueOK")
-    friend = itchat.search_friends(remarkName="小公主")
     itchat.send(result, toUserName=friend_test[0]['UserName'])
-    itchat.send(result, toUserName=friend[0]['UserName'])
+    itchat.send_image("Pimage/5.jpg", toUserName=friend_test[0]['UserName'])
 
